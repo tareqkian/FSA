@@ -1,8 +1,17 @@
 <?php
 
 return [
-    'admins' => [
-        'driver' => 'eloquent',
-        'model' => App\Models\FsaAdmin::class,
+    'guards' => [
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ]
     ],
+
+    'providers' => [
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\FsaAdmin::class,
+        ]
+    ]
 ];
