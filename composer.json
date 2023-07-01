@@ -1,0 +1,32 @@
+{
+    "name": "tarek/fsa",
+    "description": "Full Sanctum Authentication",
+    "version": "1.0.0",
+    "type": "library",
+    "require": {
+        "php": ">=8.1",
+        "laravel/framework": ">=10.10",
+        "laravel/sanctum": ">=3.2",
+        "laravel/socialite": ">=5.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tarek\\Fsa\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tareqkian",
+            "email": "tarekian99@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tarek\\Fsa\\FSAServiceProvider"
+            ]
+        }
+    }
+}
