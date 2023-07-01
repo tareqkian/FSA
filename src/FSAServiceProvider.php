@@ -2,8 +2,7 @@
 
 namespace Tarek\Fsa;
 
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Process;
+use Closure;
 use Illuminate\Support\ServiceProvider;
 
 class FSAServiceProvider extends ServiceProvider
@@ -13,7 +12,7 @@ class FSAServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/config/auth.php','auth.providers');
+        //
     }
 
     /**
@@ -23,9 +22,10 @@ class FSAServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
         $this->addPublishGroup('fsa',[
-            __DIR__ . '/Http/' => app_path('/Http/'),
-            __DIR__ . '/Models/FsaAdmin.php' => app_path('/Models/FsaAdmin.php'),
-            __DIR__ . '/routes/' => base_path('/routes/')
+            __DIR__ . '/Http/'                      => app_path('/Http/'),
+            __DIR__ . '/Models/FsaAdmin.php'        => app_path('/Models/FsaAdmin.php'),
+            __DIR__ . '/routes/'                    => base_path('/routes/'),
+            __DIR__ . '/config/fsa.php'             => config_path('fsa.php')
         ]);
     }
 }
