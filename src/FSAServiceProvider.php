@@ -13,7 +13,7 @@ class FSAServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/config/auth.php','auth');
+        $this->mergeConfigFrom(__DIR__.'/config/auth.php','auth.providers');
     }
 
     /**
