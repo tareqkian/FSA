@@ -21,24 +21,24 @@ class FSAServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
-        Config::push('auth.guards.admin', [
+        Config::set('auth.guards.admin', [
             'driver' => 'session',
             'provider' => 'admins'
         ]);
-        Config::push('auth.providers.admins', [
+        Config::set('auth.providers.admins', [
             'driver' => 'eloquent',
             'model' => \App\Models\FsaAdmin::class
         ]);
-        Config::push('auth.passwords.admins', [
+        Config::set('auth.passwords.admins', [
             'provider' => 'admins',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,
         ]);
         $this->addPublishGroup('fsa',[
-            __DIR__ . 'Http/'                      => app_path('/Http/'),
-            __DIR__ . 'Models/FsaAdmin.php'        => app_path('/Models/FsaAdmin.php'),
-            __DIR__ . 'routes/'                    => base_path('/routes/')
+            __DIR__ . '/Http/'                      => app_path('/Http/'),
+            __DIR__ . '/Models/FsaAdmin.php'        => app_path('/Models/FsaAdmin.php'),
+            __DIR__ . '/routes/'                    => base_path('/routes/')
         ]);
     }
 }
