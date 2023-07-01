@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'users' => [
+    'admins' => [
         'driver' => 'eloquent',
-        'model' => App\Models\User::class,
+        'model' => App\Models\FsaAdmin::class,
     ],
 ];
