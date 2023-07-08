@@ -16,7 +16,7 @@ return [
     'providers' => [
         'admins' => [
             'driver' => 'eloquent',
-            'model' => \App\Models\FsaAdmin::class
+            'model' => \Tarek\Fsa\Models\FsaAdmin::class
         ]
 
         // 'admins' => [

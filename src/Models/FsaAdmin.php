@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Tarek\Fsa\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -19,7 +19,10 @@ class FsaAdmin extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
+        'super_admin',
+        'status',
     ];
 
     /**

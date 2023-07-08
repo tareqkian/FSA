@@ -1,17 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FSAController;
+use Tarek\Fsa\Http\Controllers\FSAController;
 
 Route::group(["prefix" => "/auth", "middleware" => ["guest"]], function (object $route) {
     $route->post("/", [FSAController::class, "login"]);
     $route->post("/register", [FSAController::class, "register"]);
-    $route->post('/mobile/token', [FSAController::class, "mobileLogin"]);
+    $route->post('/mobile', [FSAController::class, "mobileLogin"]);
     $route->post('/forgot-password', [FSAController::class, "forgotPassword"])->name('password.email');
 
-    $route->get('/reset-password/{token}', function (string $token) {
-        return ['token' => $token];
-    })->name('password.reset');
+    $route->get('/reset-password/{token}', fn (string $token) => ['token' => $token])->name('password.reset');
 
     $route->post('/reset-password', [FSAController::class, 'resetPassword'])->name('password.update');
 

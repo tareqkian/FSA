@@ -51,13 +51,12 @@ implements MustVerifyEmail, CanResetPasswordImplementation
 
 Then use Traits
 ```injectablephp
-use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Tarek\Fsa\Traits\Providers;
 use Tarek\Fsa\Traits\CheckEmailVerifyImplementation;
+use Tarek\Fsa\Traits\FsaProfile;
 
-use HasApiTokens, Notifiable, CanResetPassword, Providers, CheckEmailVerifyImplementation;
+use CanResetPassword, FsaProfile, Providers, CheckEmailVerifyImplementation;
 ```
 
 <hr>
