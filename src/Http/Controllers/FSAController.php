@@ -1,6 +1,6 @@
 <?php
 
-namespace Tarek\Fsa\Http\Controllers;
+namespace App\Http\Controllers;
 
 use App\Models\User;
 use Tarek\Fsa\Traits\HttpResponses;
@@ -186,6 +186,9 @@ class FSAController extends Controller
         return response()->json($userCreated, 200, ['Access-Token' => $token]);
     }
 
+    /**
+     * @return JsonResponse
+     */
     protected function validateProvider(string $provider)
     {
         if (!in_array($provider, ['facebook', 'github', 'google'])) {

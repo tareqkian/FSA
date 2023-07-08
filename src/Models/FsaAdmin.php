@@ -1,6 +1,6 @@
 <?php
 
-namespace Tarek\Fsa\Models;
+namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;

@@ -40,7 +40,7 @@ class FSAServiceProvider extends ServiceProvider
             ]
         ]);
         $this->addPublishGroup('fsa',[
-            __DIR__ . '/Http/Controllers/'           => app_path('/Http/Controllers/Tarek/Fsa/'),
+            __DIR__ . '/Http/'          => app_path('/Http/'),
             __DIR__ . '/Models/FsaAdmin.php'        => app_path('/Models/Tarek/Fsa/FsaAdmin.php'),
             __DIR__ . '/Models/FsaProfile.php'      => app_path('/Models/Tarek/Fsa/FsaProfile.php'),
             __DIR__ . '/routes/'                    => base_path('/routes/'),
